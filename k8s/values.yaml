@@ -1,0 +1,7 @@
+environment: development
+container:
+  name: hello-gin
+  port: 8080
+  image: impacteintr/hellocloud
+  tag: v1.2
+replicas: 3

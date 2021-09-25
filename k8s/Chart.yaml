@@ -1,2 +1,4 @@
 name: hello-gin
+source:
+  - https://github.com/impact-eintr/micro
 version: 1.0.1
