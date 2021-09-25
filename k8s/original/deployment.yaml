@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-gin
+  labels:
+    app: hello-gin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-gin
+  template:
+    metadata:
+      labels:
+        app: hello-gin
+    spec:
+      containers:
+        - name: hello-gin
+          image: impacteintr/hellocloud:v1.0
+          ports:
+          - containerPort: 8080
+

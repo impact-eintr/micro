@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-gin
+  labels:
+    app: hello-gin
+spec:
+  # NOTE: depending on which version of the book you have, this may say port 9999. The latest version of the book uses 8888 to match the pod.
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hello-gin
+  type: ClusterIP
