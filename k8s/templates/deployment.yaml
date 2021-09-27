@@ -18,6 +18,10 @@ spec:
           image: {{ .Values.container.image }}:{{ .Values.container.tag }}
           ports:
             - containerPort: {{ .Values.container.port }}
+          resources:
+            limits:
+              memory: {{ .Values.container.memory }}
+              cpu: {{ .Values.container.cpu }}
           env:
             - name: environment
               value: {{ .Values.environment }}

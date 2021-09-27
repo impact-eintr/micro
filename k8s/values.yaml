@@ -3,5 +3,8 @@ container:
   name: hello-gin
   port: 8080
   image: impacteintr/hellocloud
-  tag: v1.2
+  tag: v1.3
+  memory: "20Mi"
+  cpu: "250m"
+
 replicas: 3

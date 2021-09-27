@@ -4,20 +4,20 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"sync/atomic"
 
 	"github.com/gin-gonic/gin"
 )
 
-var count int32 = 0
-
 func main() {
 	fmt.Println("欢迎使用gin框架")
+	s := []string{}
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
-		atomic.AddInt32(&count, 1)
-		log.Println(count)
-		c.String(http.StatusOK, "Hello, 世界")
+		s = append(s, "h")
+		if len(s) > 1024 {
+			log.Println("more than 1024")
+		}
+		c.String(http.StatusOK, s[0])
 	})
 	r.Run()
 }
