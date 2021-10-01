@@ -19,5 +19,8 @@ func main() {
 		}
 		c.String(http.StatusOK, s[0])
 	})
+	r.GET("/healthz", func(c *gin.Context) {
+		c.JSON(http.StatusOK, nil)
+	})
 	r.Run()
 }
