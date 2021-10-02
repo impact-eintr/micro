@@ -25,9 +25,9 @@ spec:
           env:
             - name: environment
               value: {{ .Values.environment }}
-          livenessProbe:
+          readinessProbe:
             httpGet:
-              path: {{ .Values.container.livenessProbe.path }}
-              port: {{ .Values.container.livenessProbe.port }}
-            initialDelaySeconds: {{ .Values.container.livenessProbe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.container.livenessProbe.periodSeconds }}
+              path: {{ .Values.container.readinessProbe.path }}
+              port: {{ .Values.container.readinessProbe.port }}
+            initialDelaySeconds: {{ .Values.container.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.container.readinessProbe.periodSeconds }}

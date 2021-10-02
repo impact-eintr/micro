@@ -3,10 +3,15 @@ container:
   name: hello-gin
   port: 8080
   image: impacteintr/hellocloud
-  tag: v1.4
+  tag: v1.4.2
   memory: "20Mi"
   cpu: "250m"
   livenessProbe:
+    path: /healthz
+    port: 8080
+    initialDelaySeconds: 3
+    periodSeconds: 3
+  readinessProbe:
     path: /healthz
     port: 8080
     initialDelaySeconds: 3
