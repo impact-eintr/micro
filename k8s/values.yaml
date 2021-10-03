@@ -1,9 +1,11 @@
 environment: development
+namespace:
+  name: demo
 container:
   name: hello-gin
   port: 8080
   image: impacteintr/hellocloud
-  tag: v1.4.2
+  tag: v1.4
   memory: "20Mi"
   cpu: "250m"
   livenessProbe:
@@ -17,3 +19,9 @@ container:
     initialDelaySeconds: 3
     periodSeconds: 3
 replicas: 3
+resourcequota:
+  pods: "100"
+limitrange:
+  default:
+    cpu: "500m"
+    memory: "250Mi"
